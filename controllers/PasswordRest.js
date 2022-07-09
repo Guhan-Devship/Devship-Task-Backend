@@ -14,7 +14,7 @@ const forgotPassword = async(req,res)=>{
 
         const user = await User.findOne({ email: req.body.email });
         if (!user)
-            return res.json({message:"password reset link sent to your email account"})
+            return res.json({message:"user with given email doesn't exist"})
 
         let token = await Token.findOne({ userId: user._id });
         if (!token) {
