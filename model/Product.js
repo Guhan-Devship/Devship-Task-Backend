@@ -4,12 +4,11 @@ const ProductSchema = new mongoose.Schema(
   {
     title: { type: String, required: true, unique: true },
     desc: { type: String, required: true, },
-    img: { type: String},
+    image: { type:String },
     model:{type:String,required: true},
     category:{type:String,required:true},
     price: { type: Number, required: true },
     offerPrice:{type:Number,required: true}
-    
   },
   { timestamps: true }
 );
