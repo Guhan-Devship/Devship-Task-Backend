@@ -7,6 +7,7 @@ const product = require("./routes/productRoute");
 const category = require("./routes/Category");
 const path = require("path");
 const cartRoutes = require("./routes/CartRoute");
+const order = require("./routes/orderRoute");
 
 const PORT = process.env.PORT || 8080;
 
@@ -22,6 +23,7 @@ app.use("/", product);
 app.use("/", category);
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 app.use("/", cartRoutes);
+app.use("/", order);
 
 const URI =
   "mongodb+srv://Guhan:guhan@cluster0.ar76cyf.mongodb.net/?retryWrites=true&w=majority";
