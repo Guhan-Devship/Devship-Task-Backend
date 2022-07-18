@@ -6,6 +6,7 @@ const CartSchema = new mongoose.Schema(
     image: { type: String },
     price: { type: Number },
     offerPrice: { type: Number },
+    quantity: { type: Number, default: 1 },
     createdby: { type: mongoose.Schema.Types.ObjectId },
   },
   { timestamps: true }

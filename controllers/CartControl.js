@@ -44,4 +44,17 @@ const deleteCart = async (req, res) => {
   }
 };
 
-module.exports = { createCart, getCart, deleteCart };
+const updateCart = async (req, res) => {
+  try {
+    const update = await Cart.findByIdAndUpdate(
+      req.params.id,
+      { $set: req.body },
+      { new: true }
+    );
+    res.status(200).json(update);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+module.exports = { createCart, getCart, deleteCart, updateCart };
