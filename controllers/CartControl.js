@@ -3,6 +3,7 @@ const Cart = require("../model/Cart");
 const createCart = async (req, res) => {
   try {
     const List = new Cart({
+      client: req.body.client,
       title: req.body.title,
       image: req.body.image,
       price: req.body.price,
