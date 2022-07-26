@@ -9,6 +9,7 @@ const path = require("path");
 const cartRoutes = require("./routes/CartRoute");
 const order = require("./routes/orderRoute");
 const address = require("./routes/addressRoutes");
+const member = require("./routes/memberRoute");
 
 const PORT = process.env.PORT || 8080;
 
@@ -26,6 +27,7 @@ app.use("/", address);
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 app.use("/", cartRoutes);
 app.use("/", order);
+app.use("/", member);
 
 const URI =
   "mongodb+srv://Guhan:guhan@cluster0.ar76cyf.mongodb.net/?retryWrites=true&w=majority";
