@@ -59,7 +59,9 @@ const updateMember = async (req, res, next) => {
   try {
     const update = await Member.findByIdAndUpdate(
       req.params.id,
-      { $set: req.body },
+      {
+        $set: req.body,
+      },
       { new: true }
     );
     res.status(200).json(update);
